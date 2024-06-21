@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission - Bookshelf Apps</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header class="container pt-4 pb-3">
+        <h1 class="text-center text-light">Bookshelf Apps</h1>
+    </header>
+    <main class="container col-sm-12 d-flex flex-column align-items-center">
+        <div class="card col-sm-10" id="add-book">
+            <div class="card-body p-5">
+                <h5 class="card-title mb-3">Add Your New Reading Book?</h5>
+                <form action="#" id="add-form" class="mb-5">
+                    <div class="row col-sm-12 mb-3">
+                        <div class="col-sm-6">
+                            <label for="title" class="form-label">Book's Title</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="author" class="form-label">Author</label>
+                            <input type="text" class="form-control" id="author" name="author" required>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="year" class="form-label">Release Year</label>
+                            <input type="number" class="form-control" id="year" name="year" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="isComplete" name="isComplete">
+                        <label class="form-check-label" for="isComplete">Finished?</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btn-submit">Submit Book</button>
+                </form>
+
+                <form action="#" id="search-form" class="mb-5 w-100">
+                    <label for="search-book" class="form-label">Search Book's</label>
+                    <div class="input-group">
+                        <input class="form-control" id="search-book" placeholder="Type to search...">
+                        <button type="submit" class="btn btn-primary" id="btn-search">Search</button>
+                    </div>
+                </form>
+
+                <div class="row col-sm-12 mt-3">
+                    <div class="col-sm-6">
+                        <h5 class="card-title">Finished Books</h5>
+                        <table class="table table-striped table-hover">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Year</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center" id="finished-reading">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5 class="card-title">Not Finished Books</h5>
+                        <table class="table table-striped table-hover">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Year</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center" id="not-finished-reading">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+        <p class="text-center text-light m-5">Copyright &copy; 2024 Priti Fahira Yunita &#128330;&#65039;</p>
+    </footer>
+
+    <!-- Modal Update -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="updateModalLabel">Update Your Book's</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="#" id="update-form" class="mb-5">
+                    <div class="mb-3">
+                        <label for="update-title" class="form-label">Book's Title</label>
+                        <input type="text" class="form-control" id="update-title" name="update-title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="update-author" class="form-label">Author</label>
+                        <input type="text" class="form-control" id="update-author" name="update-author" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="update-year" class="form-label">Release Year</label>
+                        <input type="number" class="form-control" id="update-year" name="update-year" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="update-isComplete" name="update-isComplete">
+                        <label class="form-check-label" for="update-isComplete">Finished?</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btn-update">Update</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast">
+        <div class="toast-body" id="toast">
+            <span id="toast-book-title"></span><span id="toast-message"></span>
+        </div>
+        </div>
+    </div>
+    
+    <script src="assets/script.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

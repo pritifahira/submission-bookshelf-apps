@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #394867;
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  background-color: #F1F6F9;
+}
+
+.modal-content {
+  background-color: #F1F6F9;
+}
+
+#action-button {
+  margin-right: 8px;
+}
+
+#toast-book-title {
+  font-weight: bold;
+}
+
+.toast {
+  width: auto;
+  background-color: #F1F6F9;
+  position: fixed;
+  bottom: 2rem;
+  padding: 0 0.5rem;
+  margin-left: 2rem;
+}
